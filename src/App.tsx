@@ -178,31 +178,42 @@ function App() {
             </div>
           )}
         </div>
-        <div className="absolute z-0 top-10 left-0 right-0 w-screen flex flex-col items-center gap-2 lg:gap-6">
-
+        <div className="absolute z-0 top-10  w-screen  mx-auto ">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper
             }}
             slidesPerView={2.1}
             centeredSlides={true}
+            
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
             spaceBetween={30}
-            // loop={true}
-
+            loop={true}
+            breakpoints={{
+              1024: {
+                slidesPerView: 3,
+                autoplay: false,
+                centeredSlides: false,
+              },
+              768: {
+                slidesPerView: 2.1,
+              },
+              640: {
+                slidesPerView: 1.1,
+              },
+            }}
             pagination={{
               clickable: true,
             }}
-            // navigation={true}
+            
             modules={[Autoplay]}
             direction="horizontal"
             // dir="rtl"
-            className="relative mySwiper h-40 w-full max-w-[350px] flex items-center mt-10 "
-     
+            className="relative mySwiper h-40 md:h-60 w-full max-w-[350px] md:max-w-screen-lg lg:pl-6 flex items-center mt-10 "
           >
             <SwiperSlide className=" w-full h-full flex items-center">
               <img
@@ -241,8 +252,6 @@ function App() {
               />
             </SwiperSlide>
           </Swiper>
-
-     
         </div>
         <section className="w-full mt-48 min-h-fit max-h-[500px] flex flex-col items-center gap-3">
           <p className=" w-full max-w-[500px]  px-2 font-white font-poppinsReg text-white uppercase text-[0.65rem] md:text-sm lg:text-base">
@@ -285,7 +294,7 @@ function App() {
               >
                 Producto a suscribirte
               </label>
-        
+
               <Select
                 onValueChange={(value) => setProductSelected(value)}
                 name="products"
