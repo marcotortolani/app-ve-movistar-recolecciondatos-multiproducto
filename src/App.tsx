@@ -185,7 +185,6 @@ function App() {
             }}
             slidesPerView={2.1}
             centeredSlides={true}
-            
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
@@ -209,7 +208,6 @@ function App() {
             pagination={{
               clickable: true,
             }}
-            
             modules={[Autoplay]}
             direction="horizontal"
             // dir="rtl"
@@ -270,7 +268,7 @@ function App() {
               <div className="relative w-full h-fit ">
                 <img
                   src="/img/icono-mobile.webp"
-                  alt="Phone Icon"
+                  alt="Phone Icon Mobile"
                   className=" absolute left-2 h-full py-1 lg:py-2"
                 />
                 <Input
