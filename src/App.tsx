@@ -394,7 +394,7 @@ const SyncSection = ({
     for (let i = 0; i < dataColSync.length; i += 10) {
       const res = await pushData({
         date: dateSync,
-        dataCollected: dataColSync.slice(i, i + 10),
+        numbersCollected: dataColSync.slice(i, i + 10),
       })
 
       if (!res.ok) {
@@ -417,10 +417,10 @@ const SyncSection = ({
 
   async function pushData({
     date,
-    dataCollected,
+    numbersCollected,
   }: {
     date: string
-    dataCollected: NumberCollected[]
+    numbersCollected: NumberCollected[]
   }) {
     const ENDPOINT =
       'https://test.moob.club:8005/movistar/venezuela/app-recolecciondatos-multiproducto/'
@@ -438,7 +438,7 @@ const SyncSection = ({
           data: [
             {
               date,
-              dataCollected,
+              numbersCollected,
             },
           ],
         }),
