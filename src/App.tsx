@@ -147,7 +147,7 @@ function App() {
       const index = PRODUCTS.findIndex((p) => p.value === productSelected)
 
       if (index !== -1) {
-        swiperRef.current.slideTo(index) // Mueve el Swiper al índice seleccionado
+        swiperRef.current.slideToLoop(index) // Mueve el Swiper al índice seleccionado
       }
     }
     if (productSelected === '') return
@@ -192,7 +192,7 @@ function App() {
               pauseOnMouseEnter: true,
             }}
             spaceBetween={30}
-            loop={true}
+            // loop={true}
             breakpoints={{
               1024: {
                 slidesPerView: 3,
