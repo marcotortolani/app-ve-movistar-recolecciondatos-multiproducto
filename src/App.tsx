@@ -179,113 +179,8 @@ function App() {
           )}
         </div>
         <div className="absolute z-0 top-10 left-0 right-0 w-screen flex flex-col items-center gap-2 lg:gap-6">
-          {/* Imagenes logos en gris, se activan en color */}
-          {/* <div
-            className={`${
-              productSelected === '' ? '' : ' '
-            }  w-full max-w-[350px] grid grid-cols-3  mt-10 gap-2  `}
-          >
-            <button
-              type="button"
-              onClick={() => setProductSelected('loco-por-la-cocina')}
-              className={`${
-                productSelected === 'loco-por-la-cocina'
-                  ? 'scale-125 z-50'
-                  : ' scale-90 grayscale'
-              }  w-5/6 h-full mx-auto transition-all duration-200 ease-in-out  `}
-            >
-              <img
-                src={locoPorLaCocinaLogo}
-                alt="Locos por la Cocina Logo"
-                className=" w-full h-auto"
-              />
-            </button>
-            <button
-              type="button"
-              onClick={() => setProductSelected('que-guay-viajes')}
-              className={`${
-                productSelected === 'que-guay-viajes'
-                  ? ' scale-150 z-50 '
-                  : ' scale-110 grayscale'
-              } w-5/6 h-full  mx-auto transition-all duration-200 ease-in-out `}
-            >
-              <img
-                src={queGuayViajesLogo}
-                alt="Que Guay Viajes Logo"
-                className=" w-full h-auto"
-              />
-            </button>
-            <button
-              type="button"
-              onClick={() => setProductSelected('team-gamers')}
-              className={`${
-                productSelected === 'team-gamers'
-                  ? 'scale-125 z-50'
-                  : ' scale-90 grayscale brightness-75'
-              } w-5/6 h-full mx-auto transition-all duration-200 ease-in-out `}
-            >
-              <img
-                src={teamGamersLogo}
-                alt="Team Gamers Logo"
-                className=" w-full h-auto"
-              />
-            </button>
-          </div> */}
-          {/* <div
-            className={`${
-              productSelected === '' ? '' : ' '
-            }  w-full max-w-[350px] grid grid-cols-2 grid-rows-2 mt-10 gap-0 `}
-          >
-            <button
-              type="button"
-              onClick={() => setProductSelected('que-guay-viajes')}
-              className={`${
-                productSelected === 'que-guay-viajes'
-                  ? ' scale-150 z-50 '
-                  : ' scale-110 grayscale'
-              } w-1/2 h-full col-span-2 mx-auto transition-all duration-200 ease-in-out `}
-            >
-              <img
-                src={queGuayViajesLogo}
-                alt="Que Guay Viajes Logo"
-                className=" w-full h-auto"
-              />
-            </button>
-            <button
-              type="button"
-              onClick={() => setProductSelected('team-gamers')}
-              className={`${
-                productSelected === 'team-gamers'
-                  ? 'scale-110 z-50'
-                  : ' scale-90 grayscale brightness-75'
-              } w-4/5 h-full col-span-1 mx-auto transition-all duration-200 ease-in-out `}
-            >
-              <img
-                src={teamGamersLogo}
-                alt="Team Gamers Logo"
-                className=" w-full h-auto"
-              />
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setProductSelected('loco-por-la-cocina')}
-              className={`${
-                productSelected === 'loco-por-la-cocina'
-                  ? 'scale-100 z-50'
-                  : ' scale-90 grayscale'
-              }  w-5/6 h-full mx-auto transition-all duration-200 ease-in-out `}
-            >
-              <img
-                src={locoPorLaCocinaLogo}
-                alt="Locos por la Cocina Logo"
-                className=" w-full h-auto"
-              />
-            </button>
-          </div> */}
 
           <Swiper
-            // ref={swiperRef}
             onSwiper={(swiper) => {
               swiperRef.current = swiper
             }}
@@ -307,10 +202,7 @@ function App() {
             direction="horizontal"
             // dir="rtl"
             className="relative mySwiper h-40 w-full max-w-[350px] flex items-center mt-10 "
-            // onSlideChange={(swiper) => {
-            //   console.log(swiper.realIndex + 1)
-            //   setProductSelected(PRODUCTS[swiper.realIndex].value)
-            // }}
+     
           >
             <SwiperSlide className=" w-full h-full flex items-center">
               <img
@@ -350,9 +242,7 @@ function App() {
             </SwiperSlide>
           </Swiper>
 
-          {/* <p className=" text-white uppercase font-poppinsBoldItalic md:text-2xl">
-            Tu portal de gaming
-          </p> */}
+     
         </div>
         <section className="w-full mt-48 min-h-fit max-h-[500px] flex flex-col items-center gap-3">
           <p className=" w-full max-w-[500px]  px-2 font-white font-poppinsReg text-white uppercase text-[0.65rem] md:text-sm lg:text-base">
@@ -395,22 +285,7 @@ function App() {
               >
                 Producto a suscribirte
               </label>
-              {/* <select
-                name="products"
-                id="products"
-                className=" w-full h-8 px-1 py-2 bg-white text-neutral-800 uppercase font-poppinsReg text-xs md:text-base lg:text-lg text-left rounded-sm"
-                onChange={(e) => setProductSelected(e.target.value)}
-                defaultValue={''}
-              >
-                <option value="" disabled>
-                  Seleccionar una opción
-                </option>
-                {PRODUCTS.map((prod) => (
-                  <option key={prod.value} value={prod.value}>
-                    {prod.name}
-                  </option>
-                ))}
-              </select> */}
+        
               <Select
                 onValueChange={(value) => setProductSelected(value)}
                 name="products"
@@ -539,7 +414,7 @@ const SyncSection = ({
     dataCollected: NumberCollected[]
   }) {
     const ENDPOINT =
-      'https://test.moob.club:8005/movistar/venezuela/app-escuelas/'
+      'https://test.moob.club:8005/movistar/venezuela/app-recolecciondatos-multiproducto/'
 
     // let res, data
 
